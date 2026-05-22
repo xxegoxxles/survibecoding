@@ -1,0 +1,53 @@
+title: "survibecoding"
+description: "Agentic engineering, AI-assisted development workflows, and practical ways to survive the AI shift as working engineers."
+url: "https://survibecoding.com"
+baseurl: ""
+repository: ""
+
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "default"
+locale: "en-US"
+timezone: "America/New_York"
+
+name: "survibecoding"
+masthead_title: "survibecoding"
+logo: "/assets/images/survibecoding_logo_main.png"
+
+author:
+  name: "Diego Jules"
+  bio: "Engineer exploring agentic engineering. I love finding problems and solving them in simple, elegant ways."
+  location: "United States"
+
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+include:
+  - _pages
+
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      toc: true
+      toc_label: "On This Page"
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
