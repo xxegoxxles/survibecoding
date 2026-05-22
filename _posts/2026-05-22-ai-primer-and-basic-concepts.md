@@ -10,20 +10,25 @@ tags:
   - agents
   - mcp
   - security
-excerpt: "A practical mental model for LLMs, agents, tools, context, memory, MCP, and where these ideas matter for security work."
-toc: true
+excerpt: "A glossary-style primer for people hearing terms like LLMs, agents, tools, and MCP and wanting a clear, practical mental model for how AI apps and agents work."
+toc: false
 toc_label: "On This Page"
 ---
 
+![Princess Bride You Keep Using That Word GIF](/assets/images/posts/ai-primer/you-keep-using-that-word.gif)
+
+I've had a few conversations with coworkers and friends where the AI terms we being thrown around loosely and discussions quickly got confusing, grinding to a halt. That motivated me to create a sort of glossary of AI terms to help reduce equivocation and ensure we were all agreeing on the meaning for all of these words.
 If you've been hearing terms like *LLMs*, *agents*, *tools*, and *MCP* thrown around and thinking "I kind of get it, but not really"... this is for you.
 
-This post is meant to give you a **clear, practical mental model** of how modern AI apps and agents actually work, especially from the perspective of someone in a **security/red team environment**.
+This post is meant to give the reader a **clear understanding of the core AI concepts, and a basic, practical mental model** of how AI apps and agents work.
 
-We'll keep it casual, skip the hype, and focus on what actually matters when you're building things.
+I assume that you have a basic understanding of how computers work and what terms like API, SDK, and JSON mean.
+
+
 
 # Part 1: Core Concepts
 
-Let's start with the vocabulary, but framed in a way that actually connects.
+Let's start with the vocabulary, I'll try to frame it in plain english and include links to other resources in case the reader wants to go deeper.
 
 ## Models and LLMs
 
@@ -48,13 +53,16 @@ Good starting resources:
 
 ## Embeddings
 
-Embeddings are how models understand *meaning*.
+Embeddings are how models understand *meaning*; under the hood it's all math.
 
 They turn text into vectors:
 
 ```text
-"SQL injection" -> [0.12, -0.98, ...]
+"My name is Inigo Montoya..." -> [0.12, -0.98, ...]
 ```
+
+You can think of these vectors as coordinates to concepts in the model's brain.
+By comparing the vectors of two different inputs we can calculate distances and measure how similar and how close in meaning they are.
 
 This lets you:
 
@@ -66,12 +74,13 @@ If you've ever built a detection rule and wished it was "fuzzy", embeddings are 
 
 Good intros:
 
+- Vector Search with LLMs <https://www.youtube.com/watch?v=YDdKiQNw80c>
 - <https://platform.openai.com/docs/guides/embeddings>
-- <https://www.youtube.com/watch?v=YDdKiQNw80c>
+
 
 ## Prompt
 
-At a basic level, a **prompt** is just:
+Most people think of a prompt as the question you ask the chatbot. Yes, at a basic level, a prompt is just:
 
 > the input you send to the model
 
@@ -85,7 +94,7 @@ In modern systems, a "prompt" isn't just one string. It's usually composed of:
 
 - **System instructions**: how the model should behave
 - **User input**: what the user is asking
-- **Tool definitions**: what the model is allowed to call
+- **Tool definitions**: what tools the model is allowed to call
 - **Context data**: retrieved docs, memory, and prior steps
 
 So really:
@@ -319,9 +328,9 @@ Types of memory:
 - **Working memory**: intermediate steps
 - **Long-term**: vector databases, logs, and knowledge bases
 
-In security terms:
+If you want your agent to remember what you discussed or did last week you're going to need a memory system.
+There are many ideas being explored for building effective memory systems, we'll go deeper in a future post.
 
-> memory = context + retrieval
 
 # Part 2: Agent Patterns
 

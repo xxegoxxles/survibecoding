@@ -11,10 +11,10 @@ timezone: "America/New_York"
 
 name: "survibecoding"
 masthead_title: "survibecoding"
-logo: "/assets/images/survibecoding_logo_main.png"
 
 author:
   name: "Diego Jules"
+  avatar: "/assets/images/survibecoding_logo_main.png"
   bio: "Engineer exploring agentic engineering. I love finding problems and solving them in simple, elegant ways."
   location: "United States"
 

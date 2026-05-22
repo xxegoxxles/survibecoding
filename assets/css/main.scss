@@ -7,6 +7,14 @@
 @import "minimal-mistakes/skins/default";
 @import "minimal-mistakes";
 
-.site-logo img {
-  max-height: 6rem;
+.author__avatar img {
+  max-width: 220px;
+}
+
+@media (min-width: 64em) {
+  .page__content p,
+  .page__content li,
+  .page__content dl {
+    font-size: 0.85em;
+  }
 }
