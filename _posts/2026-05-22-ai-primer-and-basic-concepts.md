@@ -62,7 +62,7 @@ They turn text into vectors:
 ```
 
 You can think of these vectors as coordinates to concepts in the model's brain.
-By comparing the vectors of two different inputs we can calculate distances and measure how similar and how close in meaning they are.
+By comparing the vectors of two different inputs we can calculate their distance and measure how close these concepts are and how similar their meaning is.
 
 This lets you:
 
