@@ -16,7 +16,7 @@ toc_label: "On This Page"
 
 ![Mr. Miyagi pruning a tree](/assets/images/posts/start-with-the-agent-workspace/mr_miyagi_pruning_tree.gif)
 
-Most teams start with a coding agent by writing one giant prompt.
+Some teams start with a coding agent by writing one giant prompt.
 
 I think that is the wrong place to begin.
 
