@@ -32,9 +32,13 @@ Let's start with the vocabulary, I'll try to frame it in plain english and inclu
 
 ## Models and LLMs
 
-At the base of everything is a **model**. You can think of it as a "brain".
+At the base of everything is a **model**. You can think of it as a kind of software "brain": it has been trained on examples until it can recognize patterns and make useful predictions on new input.
 
-A **Large Language Model (LLM)** is just a model trained to:
+For AI chat and coding tools, the kind of model people usually mean is a **Large Language Model (LLM)**.
+
+A **token** is a chunk of text the model works with. Sometimes that is a whole word, sometimes it is part of a word, punctuation, whitespace, or a code fragment.
+
+An LLM is trained to:
 
 > predict the next token given context
 
